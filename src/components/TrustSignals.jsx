@@ -83,11 +83,6 @@ const TrustSignals = () => {
                                     "{test.quote}"
                                 </p>
                                 <div className="flex-row items-center gap-sm">
-                                    <img
-                                        src={test.avatar}
-                                        alt={test.name}
-                                        style={{ width: '50px', height: '50px', borderRadius: '50%', objectFit: 'cover' }}
-                                    />
                                     <div>
                                         <h4 style={{ margin: 0, fontSize: '1rem' }}>{test.name}</h4>
                                         <span className="text-muted" style={{ fontSize: '0.875rem' }}>{test.role}</span>
