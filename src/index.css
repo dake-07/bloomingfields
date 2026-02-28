@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  /* DIMENSION 3: Color & Theme (Trust & Sustainability) */
+  --color-primary: #2d5a27;
+  /* Forest Green */
+  --color-primary-light: #3e7b36;
+  --color-primary-dark: #1b3617;
+  --color-secondary: #2c302e;
+  /* Stone Dark */
+  --color-accent: #34d399;
+  /* Emerald */
+  --color-background: #f4f1ea;
+  /* Cream */
+  --color-surface: #ffffff;
+  --color-text-main: #1a1a1a;
+  --color-text-muted: #5e6b64;
+
+  /* DIMENSION 4: Typography */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  /* 8px */
+  --space-sm: 1rem;
+  /* 16px */
+  --space-md: 1.5rem;
+  /* 24px */
+  --space-lg: 2rem;
+  /* 32px */
+  --space-xl: 3rem;
+  /* 48px */
+  --space-2xl: 5rem;
+  /* 80px */
+
+  /* DIMENSION 2: Style & Aesthetic (Neumorphism 2.0 / Organic) */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 4px 6px -1px rgba(45, 90, 39, 0.05), 0 2px 4px -1px rgba(45, 90, 39, 0.03);
+  --shadow-md: 0 10px 15px -3px rgba(45, 90, 39, 0.08), 0 4px 6px -2px rgba(45, 90, 39, 0.04);
+  --shadow-lg: 0 20px 25px -5px rgba(45, 90, 39, 0.1), 0 10px 10px -5px rgba(45, 90, 39, 0.04);
+  --shadow-hover: 0 25px 30px -5px rgba(45, 90, 39, 0.15), 0 15px 15px -5px rgba(45, 90, 39, 0.05);
+
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+  --transition-slow: 400ms ease-in-out;
+}
+
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-text-main);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-sm);
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+p {
+  margin-bottom: var(--space-sm);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* DIMENSION 5: Animations & Interactions - Global Utility Classes */
+
+/* Container */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: 0.875rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  transition: all var(--transition-normal);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-light);
+  transform: scale(1.02) translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(45, 90, 39, 0.05);
+  transform: scale(1.02);
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+.btn-accent:hover {
+  background-color: #2fb582;
+  transform: scale(1.02) translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(52, 211, 153, 0.3);
+}
+
+/* Cards / Bento Boxes */
+.card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-slow);
+  border: 1px solid rgba(45, 90, 39, 0.05);
+  /* Very subtle 1px border for crispness */
+}
+
+/* DIMENSION 5: Hover effects for interactivity */
+.card-interactive {
+  cursor: pointer;
+}
+
+.card-interactive:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.learn-more-link {
+  transition: transform var(--transition-fast);
+}
+
+.learn-more-link:hover {
+  transform: translateX(4px);
+}
+
+/* Utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.bg-surface {
+  background-color: var(--color-surface);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+  color: white;
+}
+
+.section-padding {
+  padding: var(--space-2xl) 0;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-sm {
+  gap: var(--space-sm);
+}
+
+.gap-md {
+  gap: var(--space-md);
+}
+
+.gap-lg {
+  gap: var(--space-lg);
+}
+
+/* Layout Grid Utilities */
+.grid {
+  display: grid;
+}
+
+.grid-cols-1 {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Mobile Tap Targets */
+button,
+a {
+  min-height: 44px;
+  /* DIMENSION 5 Anti-pattern: avoid tiny tap targets */
+  min-width: 44px;
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .section-padding {
+    padding: var(--space-xl) 0;
+  }
+
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 0 var(--space-md);
+  }
+
+  /* Typography Scaling for Mobile */
+  h1 {
+    font-size: clamp(2rem, 8vw, 2.5rem);
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 6vw, 2rem);
+  }
+
+  h3 {
+    font-size: clamp(1.25rem, 5vw, 1.5rem);
+  }
+
+  /* Layout adjustments */
+  .hero {
+    padding-top: 100px !important;
+    text-align: center;
+  }
+
+  .bento-grid {
+    gap: var(--space-sm);
+  }
+
+  .card {
+    padding: var(--space-md);
+  }
+
+  /* Flex direction utilities for mobile */
+  .md-flex-row {
+    flex-direction: column !important;
+  }
+
+  /* Mobile padding for bottom nav */
+  .mobile-nav .nav-link {
+    padding: 1rem 0;
+    font-size: 1.125rem;
+  }
+}
