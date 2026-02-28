@@ -98,7 +98,15 @@ const Navbar = () => {
                                 href="#contact"
                                 className="btn btn-primary"
                                 style={{ display: 'flex', marginTop: '1rem', justifyContent: 'center' }}
-                                onClick={() => setIsMobileMenuOpen(false)}
+                                onClick={(e) => {
+                                    setIsMobileMenuOpen(false);
+                                    setTimeout(() => {
+                                        const element = document.getElementById('contact');
+                                        if (element) {
+                                            element.scrollIntoView({ behavior: 'smooth' });
+                                        }
+                                    }, 100);
+                                }}
                             >
                                 Partner with Us
                             </a>
