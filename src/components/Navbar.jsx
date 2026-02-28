@@ -98,7 +98,7 @@ const Navbar = () => {
                                 href="#contact"
                                 className="btn btn-primary"
                                 style={{ display: 'flex', marginTop: '1rem', justifyContent: 'center' }}
-                                onClick={() => setTimeout(() => setIsMobileMenuOpen(false), 150)}
+                                onClick={() => setIsMobileMenuOpen(false)}
                             >
                                 Partner with Us
                             </a>
