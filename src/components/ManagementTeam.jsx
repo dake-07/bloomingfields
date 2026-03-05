@@ -23,6 +23,13 @@ const ManagementTeam = () => {
             role: 'Project Analysis',
             initials: 'ED',
             bgColor: '#9e9e9e' // Soft earthy gray
+        },
+        {
+            id: 4,
+            name: 'Beloveson Quaye Mensah',
+            role: 'PA to the CEO',
+            initials: 'BM',
+            bgColor: '#b8926a' // Warm earthy tone
         }
     ];
 
@@ -75,7 +82,7 @@ const ManagementTeam = () => {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true, margin: "-50px" }}
-                    className="grid grid-cols-1 md:grid-cols-3 gap-lg"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-lg"
                 >
                     {team.map((member) => (
                         <motion.div
