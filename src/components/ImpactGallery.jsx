@@ -60,14 +60,14 @@ const ImpactGallery = () => {
         {
             id: 'v1',
             type: 'video',
-            src: 'https://img.youtube.com/vi/a9pSVHMJj6c/maxresdefault.jpg',
+            src: 'https://img.youtube.com/vi/a9pSVHMJj6c/hqdefault.jpg',
             caption: 'Farmer Support in Action',
             videoUrl: 'https://www.youtube.com/embed/a9pSVHMJj6c'
         },
         {
             id: 'v2',
             type: 'video',
-            src: 'https://img.youtube.com/vi/9OCfU3ahOmM/maxresdefault.jpg',
+            src: 'https://img.youtube.com/vi/9OCfU3ahOmM/hqdefault.jpg',
             caption: '2026 Input Distribution Highlights',
             videoUrl: 'https://www.youtube.com/embed/9OCfU3ahOmM'
         },
