@@ -9,39 +9,39 @@ const ImpactGallery = () => {
         {
             id: 1,
             type: 'image',
-            src: 'https://images.unsplash.com/photo-1592982537447-6f296c09b7c8?auto=format&fit=crop&q=80',
+            src: '/assets/gallery/image1.jpg',
             caption: 'Community Harvest 2025',
         },
         {
             id: 2,
             type: 'video',
-            src: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?auto=format&fit=crop&q=80',
+            src: '/assets/gallery/video-thumbnail1.jpg',
             caption: 'Sustainable Practices Explained',
             videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ' // Example
         },
         {
             id: 3,
             type: 'image',
-            src: 'https://images.unsplash.com/photo-1595844730298-b960fa25fa48?auto=format&fit=crop&q=80',
+            src: '/assets/gallery/image2.jpg',
             caption: 'Farmer Support Initiative',
         },
         {
             id: 4,
             type: 'image',
-            src: 'https://images.unsplash.com/photo-1589923188900-85dae523342b?auto=format&fit=crop&q=80',
+            src: '/assets/gallery/image3.jpg',
             caption: 'Seed Distribution',
         },
         {
             id: 5,
             type: 'video',
-            src: 'https://images.unsplash.com/photo-1495107334309-fcf20504a5ab?auto=format&fit=crop&q=80',
+            src: '/assets/gallery/video-thumbnail2.jpg',
             caption: 'Drone Tech Demonstration',
             videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
         },
         {
             id: 6,
             type: 'image',
-            src: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80',
+            src: '/assets/gallery/image4.jpg',
             caption: 'Annual Farmers Market',
         }
     ];
