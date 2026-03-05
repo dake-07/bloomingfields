@@ -276,7 +276,7 @@ const ImpactGallery = () => {
                             left: 0,
                             right: 0,
                             bottom: 0,
-                            backgroundColor: 'rgba(0,0,0,0.9)',
+                            backgroundColor: 'rgba(0,0,0,0.98)',
                             zIndex: 1000,
                             display: 'flex',
                             alignItems: 'center',
@@ -319,7 +319,7 @@ const ImpactGallery = () => {
                                 <div style={{ position: 'relative', paddingBottom: '177.77%', height: 0, overflow: 'hidden', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-xl)' }}>
                                     {/* 177.77% padding bottom for 9:16 aspect ratio (YouTube Shorts) */}
                                     <iframe
-                                        src={`${selectedMedia.videoUrl}?autoplay=1&mute=0`}
+                                        src={`${selectedMedia.videoUrl}?autoplay=1&mute=0&showinfo=0&modestbranding=1&rel=0`}
                                         style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowFullScreen
