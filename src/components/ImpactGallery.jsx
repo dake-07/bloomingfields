@@ -56,6 +56,37 @@ const ImpactGallery = () => {
         }
     ];
 
+    const videoHighlights = [
+        {
+            id: 'v1',
+            type: 'video',
+            src: 'https://img.youtube.com/vi/a9pSVHMJj6c/maxresdefault.jpg',
+            caption: 'Farmer Support in Action',
+            videoUrl: 'https://www.youtube.com/embed/a9pSVHMJj6c'
+        },
+        {
+            id: 'v2',
+            type: 'video',
+            src: 'https://img.youtube.com/vi/9OCfU3ahOmM/maxresdefault.jpg',
+            caption: '2026 Input Distribution Highlights',
+            videoUrl: 'https://www.youtube.com/embed/9OCfU3ahOmM'
+        },
+        {
+            id: 'v3',
+            type: 'video',
+            src: 'https://img.youtube.com/vi/jznMsypqv8k/maxresdefault.jpg',
+            caption: 'Modern Farming Operations',
+            videoUrl: 'https://www.youtube.com/embed/jznMsypqv8k'
+        },
+        {
+            id: 'v4',
+            type: 'video',
+            src: 'https://img.youtube.com/vi/y21cZ-LW5yk/maxresdefault.jpg',
+            caption: 'Credit Support Success Stories',
+            videoUrl: 'https://www.youtube.com/embed/y21cZ-LW5yk'
+        }
+    ];
+
     return (
         <section id="impact" className="section-padding bg-background w-full">
             <div className="container">
@@ -145,6 +176,90 @@ const ImpactGallery = () => {
                         </motion.div>
                     ))}
                 </div>
+
+                {/* Video Highlights Section */}
+                <div style={{ marginTop: 'var(--space-2xl)' }}>
+                    <div className="text-center" style={{ marginBottom: 'var(--space-xl)' }}>
+                        <motion.h3
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6 }}
+                            style={{ color: 'var(--primary)', marginBottom: 'var(--space-sm)' }}
+                        >
+                            Video Highlights
+                        </motion.h3>
+                        <div style={{ width: '60px', height: '4px', backgroundColor: 'var(--accent)', margin: '0 auto', borderRadius: '2px' }}></div>
+                    </div>
+
+                    <div style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+                        gap: 'var(--space-md)'
+                    }}>
+                        {videoHighlights.map((video, index) => (
+                            <motion.div
+                                key={video.id}
+                                initial={{ opacity: 0, scale: 0.95 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                className="card-interactive"
+                                onClick={() => setSelectedMedia(video)}
+                                style={{
+                                    position: 'relative',
+                                    borderRadius: 'var(--radius-md)',
+                                    overflow: 'hidden',
+                                    cursor: 'pointer',
+                                    boxShadow: 'var(--shadow-md)',
+                                    aspectRatio: '9/16' // For YouTube Shorts
+                                }}
+                            >
+                                <img
+                                    src={video.src}
+                                    alt={video.caption}
+                                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                                />
+
+                                {/* Play Icon Overlay */}
+                                <div style={{
+                                    position: 'absolute',
+                                    top: '50%',
+                                    left: '50%',
+                                    transform: 'translate(-50%, -50%)',
+                                    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                                    padding: '1.25rem',
+                                    borderRadius: '50%',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    boxShadow: 'var(--shadow-lg)',
+                                    zIndex: 2,
+                                    transition: 'transform 0.3s ease'
+                                }}
+                                    className="play-btn-overlay"
+                                >
+                                    <Play size={36} fill="var(--primary)" style={{ color: 'var(--primary)' }} />
+                                </div>
+
+                                {/* Caption Overlay */}
+                                <div style={{
+                                    position: 'absolute',
+                                    bottom: 0,
+                                    left: 0,
+                                    right: 0,
+                                    padding: 'var(--space-xl) var(--space-md) var(--space-md)',
+                                    background: 'linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 100%)',
+                                    color: 'white'
+                                }}>
+                                    <h4 style={{ margin: 0, color: 'white', fontWeight: 600, fontSize: '1.1rem', textShadow: '0 2px 4px rgba(0,0,0,0.5)' }}>
+                                        {video.caption}
+                                    </h4>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </div>
             </div>
 
             {/* Lightbox Modal */}
@@ -194,12 +309,17 @@ const ImpactGallery = () => {
                             animate={{ scale: 1, opacity: 1 }}
                             exit={{ scale: 0.9, opacity: 0 }}
                             onClick={(e) => e.stopPropagation()}
-                            style={{ maxWidth: '1000px', width: '100%', maxHeight: '90vh' }}
+                            style={{
+                                maxWidth: selectedMedia.type === 'video' ? '400px' : '1000px', // Narrower for Shorts
+                                width: '100%',
+                                maxHeight: '90vh'
+                            }}
                         >
                             {selectedMedia.type === 'video' ? (
-                                <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', borderRadius: 'var(--radius-md)' }}>
+                                <div style={{ position: 'relative', paddingBottom: '177.77%', height: 0, overflow: 'hidden', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-xl)' }}>
+                                    {/* 177.77% padding bottom for 9:16 aspect ratio (YouTube Shorts) */}
                                     <iframe
-                                        src={selectedMedia.videoUrl}
+                                        src={`${selectedMedia.videoUrl}?autoplay=1&mute=0`}
                                         style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 0 }}
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                         allowFullScreen
@@ -235,6 +355,10 @@ const ImpactGallery = () => {
 
                 .masonry-item:hover .caption-overlay {
                     opacity: 1 !important;
+                }
+
+                .card-interactive:hover .play-btn-overlay {
+                    transform: translate(-50%, -50%) scale(1.1) !important;
                 }
 
                 @media (max-width: 1024px) {
