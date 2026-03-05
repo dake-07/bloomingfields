@@ -6,6 +6,8 @@ import Hero from './components/Hero';
 // Phase 3 components
 import Services from './components/Services';
 import About from './components/About';
+import ManagementTeam from './components/ManagementTeam';
+import ImpactGallery from './components/ImpactGallery';
 import TrustSignals from './components/TrustSignals';
 import Footer from './components/Footer';
 
@@ -18,6 +20,8 @@ function App() {
         <Hero />
         <Services />
         <About />
+        <ManagementTeam />
+        <ImpactGallery />
         <TrustSignals />
       </main>
 

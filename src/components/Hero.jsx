@@ -126,16 +126,16 @@ const Hero = () => {
                     }}
                 >
                     <div className="stat-item flex-column items-center">
-                        <h3 className="text-primary" style={{ fontSize: '2rem', marginBottom: '0.25rem' }}>100%</h3>
-                        <span className="text-muted" style={{ fontSize: '0.875rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Quality Assured</span>
+                        <h3 className="text-primary" style={{ fontSize: '2rem', marginBottom: '0.25rem' }}>50+</h3>
+                        <span className="text-muted" style={{ fontSize: '0.875rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', textAlign: 'center' }}>Total Farmer Base</span>
                     </div>
                     <div className="stat-item flex-column items-center">
-                        <h3 className="text-primary" style={{ fontSize: '2rem', marginBottom: '0.25rem' }}>24/7</h3>
-                        <span className="text-muted" style={{ fontSize: '0.875rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Expert Support</span>
+                        <h3 className="text-primary" style={{ fontSize: '2rem', marginBottom: '0.25rem' }}>GH₵ 300k+</h3>
+                        <span className="text-muted" style={{ fontSize: '0.875rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', textAlign: 'center' }}>Credit Disbursed</span>
                     </div>
                     <div className="stat-item flex-column items-center">
                         <h3 className="text-primary" style={{ fontSize: '2rem', marginBottom: '0.25rem' }}>4</h3>
-                        <span className="text-muted" style={{ fontSize: '0.875rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Core Services</span>
+                        <span className="text-muted" style={{ fontSize: '0.875rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', textAlign: 'center' }}>Core Services</span>
                     </div>
                 </motion.div>
             </div>
