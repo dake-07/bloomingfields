@@ -9,40 +9,50 @@ const ImpactGallery = () => {
         {
             id: 1,
             type: 'image',
-            src: '/assets/gallery/image1.jpg',
+            src: '/assets/gallery/WhatsApp Image 2026-02-28 at 1.43.33 PM.jpeg',
             caption: 'Community Harvest 2025',
         },
         {
             id: 2,
-            type: 'video',
-            src: '/assets/gallery/video-thumbnail1.jpg',
+            type: 'image',
+            src: '/assets/gallery/WhatsApp Image 2026-02-28 at 1.45.03 PM.jpeg',
             caption: 'Sustainable Practices Explained',
-            videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ' // Example
         },
         {
             id: 3,
             type: 'image',
-            src: '/assets/gallery/image2.jpg',
+            src: '/assets/gallery/WhatsApp Image 2026-02-28 at 1.49.44 PM.jpeg',
             caption: 'Farmer Support Initiative',
         },
         {
             id: 4,
             type: 'image',
-            src: '/assets/gallery/image3.jpg',
+            src: '/assets/gallery/WhatsApp Image 2026-03-01 at 9.33.16 AM.jpeg',
             caption: 'Seed Distribution',
         },
         {
             id: 5,
-            type: 'video',
-            src: '/assets/gallery/video-thumbnail2.jpg',
-            caption: 'Drone Tech Demonstration',
-            videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ'
+            type: 'image',
+            src: '/assets/gallery/WhatsApp Image 2026-03-01 at 9.33.17 AM.jpeg',
+            caption: 'Tech Demonstration',
         },
         {
             id: 6,
             type: 'image',
-            src: '/assets/gallery/image4.jpg',
+            src: '/assets/gallery/WhatsApp Image 2026-03-01 at 9.33.34 AM.jpeg',
             caption: 'Annual Farmers Market',
+        },
+        {
+            id: 7,
+            type: 'image',
+            src: '/assets/gallery/WhatsApp Image 2026-03-01 at 9.34.14 AM.jpeg',
+            caption: 'Local Partnerships',
+        },
+        {
+            id: 8,
+            type: 'image',
+            src: '/assets/gallery/WhatsApp Image 2026-03-01 at 9.35.34 AM.jpeg',
+            caption: 'Agricultural Growth',
         }
     ];
 
