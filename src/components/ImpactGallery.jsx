@@ -141,6 +141,7 @@ const ImpactGallery = () => {
                             <img
                                 src={item.src}
                                 alt={item.caption}
+                                loading="lazy"
                                 style={{ width: '100%', display: 'block', objectFit: 'cover' }}
                             />
 
@@ -224,6 +225,7 @@ const ImpactGallery = () => {
                                 <img
                                     src={video.src}
                                     alt={video.caption}
+                                    loading="lazy"
                                     style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                                 />
 
@@ -293,6 +295,7 @@ const ImpactGallery = () => {
                         {/* Close Button */}
                         <button
                             onClick={() => setSelectedMedia(null)}
+                            aria-label="Close modal"
                             style={{
                                 position: 'absolute',
                                 top: 'var(--space-md)',
