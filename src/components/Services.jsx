@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Sprout, CreditCard, ShoppingCart, Tractor } from 'lucide-react';
+import { servicesData } from '../data/data';
 
 const Services = () => {
     const containerVariants = {
@@ -21,43 +21,6 @@ const Services = () => {
             transition: { duration: 0.6, ease: 'easeOut' }
         }
     };
-
-    const services = [
-        {
-            id: 1,
-            title: 'Input Support',
-            icon: <Sprout size={32} className="text-primary" />,
-            description: 'High-quality seeds, organic fertilizers, and sustainable crop protection to maximize your yield from day one.',
-            span: 'col-span-1 md:col-span-2',
-            bg: 'bg-surface'
-        },
-        {
-            id: 2,
-            title: 'Credit Support',
-            icon: <CreditCard size={32} className="text-accent" />,
-            description: 'Flexible financing solutions tailored for seasonal agricultural cycles. Grow now, pay post-harvest.',
-            span: 'col-span-1 md:col-span-1',
-            bg: 'bg-primary',
-            textMain: 'white',
-            textMuted: 'rgba(255,255,255,0.8)'
-        },
-        {
-            id: 3,
-            title: 'Buy and Sell',
-            icon: <ShoppingCart size={32} className="text-primary" />,
-            description: 'Direct market access cutting out the middlemen. Get fair prices for your produce seamlessly.',
-            span: 'col-span-1 md:col-span-1',
-            bg: 'bg-surface'
-        },
-        {
-            id: 4,
-            title: 'Farming Operations',
-            icon: <Tractor size={32} className="text-primary" />,
-            description: 'End-to-end operational support, machinery leasing, and expert agronomic advice directly on your farm.',
-            span: 'col-span-1 md:col-span-2',
-            bg: 'bg-surface'
-        }
-    ];
 
     return (
         <section id="services" className="section-padding bg-background w-full">
@@ -93,7 +56,7 @@ const Services = () => {
                     viewport={{ once: true, margin: "-50px" }}
                     className="bento-grid"
                 >
-                    {services.map((service) => (
+                    {servicesData.map((service) => (
                         <motion.div
                             key={service.id}
                             variants={itemVariants}

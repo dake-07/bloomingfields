@@ -1,97 +1,10 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, X } from 'lucide-react';
+import { galleryItems, videoHighlights } from '../data/data';
 
 const ImpactGallery = () => {
     const [selectedMedia, setSelectedMedia] = useState(null);
-
-    const galleryItems = [
-        {
-            id: 1,
-            type: 'image',
-            src: `${import.meta.env.BASE_URL}assets/gallery/WhatsApp Image 2026-02-28 at 1.43.33 PM.jpeg`,
-            caption: 'Community Harvest 2025',
-        },
-        {
-            id: 2,
-            type: 'image',
-            src: `${import.meta.env.BASE_URL}assets/gallery/WhatsApp Image 2026-02-28 at 1.45.03 PM.jpeg`,
-            caption: 'Sustainable Practices Explained',
-        },
-        {
-            id: 3,
-            type: 'image',
-            src: `${import.meta.env.BASE_URL}assets/gallery/WhatsApp Image 2026-02-28 at 1.49.44 PM.jpeg`,
-            caption: 'Farmer Support Initiative',
-        },
-        {
-            id: 4,
-            type: 'image',
-            src: `${import.meta.env.BASE_URL}assets/gallery/WhatsApp Image 2026-03-01 at 9.33.16 AM.jpeg`,
-            caption: 'Seed Distribution',
-        },
-        {
-            id: 5,
-            type: 'image',
-            src: `${import.meta.env.BASE_URL}assets/gallery/WhatsApp Image 2026-03-01 at 9.33.17 AM.jpeg`,
-            caption: 'Tech Demonstration',
-        },
-        {
-            id: 6,
-            type: 'image',
-            src: `${import.meta.env.BASE_URL}assets/gallery/WhatsApp Image 2026-03-01 at 9.33.34 AM.jpeg`,
-            caption: 'Annual Farmers Market',
-        },
-        {
-            id: 7,
-            type: 'image',
-            src: `${import.meta.env.BASE_URL}assets/gallery/WhatsApp Image 2026-03-01 at 9.34.14 AM.jpeg`,
-            caption: 'Local Partnerships',
-        },
-        {
-            id: 8,
-            type: 'image',
-            src: `${import.meta.env.BASE_URL}assets/gallery/WhatsApp Image 2026-03-01 at 9.35.34 AM.jpeg`,
-            caption: 'Agricultural Growth',
-        },
-        {
-            id: 9,
-            type: 'image',
-            src: `${import.meta.env.BASE_URL}assets/gallery/WhatsApp Image 2026-03-05 at 7.52.11 AM - Copy.jpeg`,
-            caption: 'Community Support & Partnership',
-        }
-    ];
-
-    const videoHighlights = [
-        {
-            id: 'v1',
-            type: 'video',
-            src: 'https://img.youtube.com/vi/a9pSVHMJj6c/hqdefault.jpg',
-            caption: 'Farmer Support in Action',
-            videoUrl: 'https://www.youtube.com/embed/a9pSVHMJj6c'
-        },
-        {
-            id: 'v2',
-            type: 'video',
-            src: 'https://img.youtube.com/vi/9OCfU3ahOmM/hqdefault.jpg',
-            caption: '2026 Input Distribution Highlights',
-            videoUrl: 'https://www.youtube.com/embed/9OCfU3ahOmM'
-        },
-        {
-            id: 'v3',
-            type: 'video',
-            src: 'https://img.youtube.com/vi/jznMsypqv8k/maxresdefault.jpg',
-            caption: 'Modern Farming Operations',
-            videoUrl: 'https://www.youtube.com/embed/jznMsypqv8k'
-        },
-        {
-            id: 'v4',
-            type: 'video',
-            src: 'https://img.youtube.com/vi/y21cZ-LW5yk/maxresdefault.jpg',
-            caption: 'Credit Support Success Stories',
-            videoUrl: 'https://www.youtube.com/embed/y21cZ-LW5yk'
-        }
-    ];
 
     return (
         <section id="impact" className="section-padding bg-background w-full">

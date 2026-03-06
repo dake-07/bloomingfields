@@ -1,38 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { teamData } from '../data/data';
 
 const ManagementTeam = () => {
-    const team = [
-        {
-            id: 1,
-            name: 'Mrs. Elsie Owusu',
-            role: 'CEO',
-            initials: 'EO',
-            bgColor: '#1b3617' // Deep forest green
-        },
-        {
-            id: 2,
-            name: 'Mr. Peter Asare',
-            role: 'Project Manager',
-            initials: 'PA',
-            bgColor: '#8a9a86' // Sage green
-        },
-        {
-            id: 3,
-            name: 'Emmanuel Amoo Darko',
-            role: 'Project Analysis',
-            initials: 'ED',
-            bgColor: '#9e9e9e' // Soft earthy gray
-        },
-        {
-            id: 4,
-            name: 'Beloveson Quaye Mensah',
-            role: 'PA to the CEO',
-            initials: 'BM',
-            bgColor: '#b8926a' // Warm earthy tone
-        }
-    ];
-
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -84,7 +54,7 @@ const ManagementTeam = () => {
                     viewport={{ once: true, margin: "-50px" }}
                     className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-lg"
                 >
-                    {team.map((member) => (
+                    {teamData.map((member) => (
                         <motion.div
                             key={member.id}
                             variants={itemVariants}
