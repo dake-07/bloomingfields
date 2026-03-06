@@ -80,15 +80,11 @@ const SupportAgreementForm = () => {
         };
 
         try {
-            // NOTE TO DEVELOPER: Replace these with your actual EmailJS credentials
-            // const serviceId = 'YOUR_SERVICE_ID';
-            // const templateId = 'YOUR_TEMPLATE_ID';
-            // const publicKey = 'YOUR_PUBLIC_KEY';
+            const serviceId = 'service_ln64mhc';
+            const templateId = 'template_0yfj7qh';
+            const publicKey = 'Q583w3-QZyGxBtBaP';
 
-            // For now, if no keys are provided, we will simulate a success after 1.5 seconds.
-            // await emailjs.send(serviceId, templateId, templateParams, publicKey);
-
-            await new Promise((resolve) => setTimeout(resolve, 1500));
+            await emailjs.send(serviceId, templateId, templateParams, publicKey);
 
             console.log('Form submission payload:', templateParams);
             setIsSuccess(true);
