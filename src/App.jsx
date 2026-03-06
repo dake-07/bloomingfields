@@ -27,7 +27,7 @@ function App() {
 
   return (
     <div className="app-container flex-column">
-      <Navbar onNavigate={(isPortal) => { setShowPortal(isPortal); window.scrollTo(0, 0); }} />
+      <Navbar showPortal={showPortal} onNavigate={(isPortal) => { setShowPortal(isPortal); window.scrollTo(0, 0); }} />
 
       <main>
         {showPortal ? (

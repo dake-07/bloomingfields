@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Sprout } from 'lucide-react';
+import { Menu, X, Sprout, ArrowLeft } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const Navbar = ({ onNavigate }) => {
+const Navbar = ({ onNavigate, showPortal }) => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -46,47 +46,72 @@ const Navbar = ({ onNavigate }) => {
 
                 {/* Desktop Navigation */}
                 <div className="desktop-nav md-flex flex-row items-center gap-lg">
-                    <div className="nav-links flex-row gap-md">
-                        {navLinks.map((link) => (
-                            <a
-                                key={link.name}
-                                href={link.href}
-                                onClick={(e) => {
-                                    if (onNavigate) {
-                                        onNavigate(false);
-                                        // Slight delay so the home view renders before scrolling
-                                        setTimeout(() => {
-                                            const el = document.querySelector(link.href);
-                                            if (el) el.scrollIntoView({ behavior: 'smooth' });
-                                        }, 100);
-                                    }
-                                }}
-                                className="nav-link text-primary"
-                                style={{ fontWeight: 500, fontSize: '1rem', transition: 'color 0.2s' }}
-                            >
-                                {link.name}
-                            </a>
-                        ))}
-                    </div>
-                    <button onClick={() => onNavigate && onNavigate(true)} className="btn btn-primary" style={{ border: 'none' }}>
-                        Apply for Support
-                    </button>
+                    {showPortal ? (
+                        <button
+                            onClick={() => onNavigate && onNavigate(false)}
+                            className="btn btn-secondary flex-row items-center gap-xs"
+                            style={{ border: 'none' }}
+                        >
+                            <ArrowLeft size={20} />
+                            <span>Back to Home</span>
+                        </button>
+                    ) : (
+                        <>
+                            <div className="nav-links flex-row gap-md">
+                                {navLinks.map((link) => (
+                                    <a
+                                        key={link.name}
+                                        href={link.href}
+                                        onClick={(e) => {
+                                            if (onNavigate) {
+                                                onNavigate(false);
+                                                // Slight delay so the home view renders before scrolling
+                                                setTimeout(() => {
+                                                    const el = document.querySelector(link.href);
+                                                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                                                }, 100);
+                                            }
+                                        }}
+                                        className="nav-link text-primary"
+                                        style={{ fontWeight: 500, fontSize: '1rem', transition: 'color 0.2s' }}
+                                    >
+                                        {link.name}
+                                    </a>
+                                ))}
+                            </div>
+                            <button onClick={() => onNavigate && onNavigate(true)} className="btn btn-primary" style={{ border: 'none' }}>
+                                Apply for Support
+                            </button>
+                        </>
+                    )}
                 </div>
 
                 {/* Mobile Menu Toggle */}
-                <button
-                    className="mobile-toggle md-hidden"
-                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                    style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-primary)' }}
-                    aria-label="Toggle menu"
-                >
-                    {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-                </button>
+                {!showPortal && (
+                    <button
+                        className="mobile-toggle md-hidden"
+                        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-primary)' }}
+                        aria-label="Toggle menu"
+                    >
+                        {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                    </button>
+                )}
+                {showPortal && (
+                    <button
+                        className="mobile-toggle md-hidden"
+                        onClick={() => onNavigate && onNavigate(false)}
+                        style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-primary)', display: 'flex', alignItems: 'center', gap: '4px' }}
+                    >
+                        <ArrowLeft size={20} />
+                        <span style={{ fontSize: '0.9rem', fontWeight: 600 }}>Back</span>
+                    </button>
+                )}
             </div>
 
             {/* Mobile Navigation Dropdown */}
             <AnimatePresence>
-                {isMobileMenuOpen && (
+                {!showPortal && isMobileMenuOpen && (
                     <motion.div
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
