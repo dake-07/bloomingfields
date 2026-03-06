@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Sprout } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const Navbar = () => {
+const Navbar = ({ onNavigate }) => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -39,7 +39,7 @@ const Navbar = () => {
         >
             <div className="container flex-row items-center justify-between">
                 {/* Logo */}
-                <a href="#" className="logo flex-row items-center" style={{ gap: '0.5rem', fontWeight: 600, fontSize: '1.25rem', color: 'var(--color-primary)' }}>
+                <a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate(false); }} className="logo flex-row items-center" style={{ gap: '0.5rem', fontWeight: 600, fontSize: '1.25rem', color: 'var(--color-primary)' }}>
                     <Sprout size={32} />
                     <span>Blooming Fields Agriservices</span>
                 </a>
@@ -51,6 +51,16 @@ const Navbar = () => {
                             <a
                                 key={link.name}
                                 href={link.href}
+                                onClick={(e) => {
+                                    if (onNavigate) {
+                                        onNavigate(false);
+                                        // Slight delay so the home view renders before scrolling
+                                        setTimeout(() => {
+                                            const el = document.querySelector(link.href);
+                                            if (el) el.scrollIntoView({ behavior: 'smooth' });
+                                        }, 100);
+                                    }
+                                }}
                                 className="nav-link text-primary"
                                 style={{ fontWeight: 500, fontSize: '1rem', transition: 'color 0.2s' }}
                             >
@@ -58,7 +68,9 @@ const Navbar = () => {
                             </a>
                         ))}
                     </div>
-                    <a href="#contact" className="btn btn-primary">Partner with Us</a>
+                    <button onClick={() => onNavigate && onNavigate(true)} className="btn btn-primary" style={{ border: 'none' }}>
+                        Apply for Support
+                    </button>
                 </div>
 
                 {/* Mobile Menu Toggle */}
@@ -89,27 +101,30 @@ const Navbar = () => {
                                     href={link.href}
                                     className="nav-link text-primary"
                                     style={{ display: 'block', padding: '0.75rem 0', borderBottom: '1px solid rgba(45,90,39,0.1)', fontWeight: 500 }}
-                                    onClick={() => setTimeout(() => setIsMobileMenuOpen(false), 150)}
+                                    onClick={(e) => {
+                                        setIsMobileMenuOpen(false);
+                                        if (onNavigate) {
+                                            onNavigate(false);
+                                            setTimeout(() => {
+                                                const el = document.querySelector(link.href);
+                                                if (el) el.scrollIntoView({ behavior: 'smooth' });
+                                            }, 100);
+                                        }
+                                    }}
                                 >
                                     {link.name}
                                 </a>
                             ))}
-                            <a
-                                href="#contact"
+                            <button
                                 className="btn btn-primary"
-                                style={{ display: 'flex', marginTop: '1rem', justifyContent: 'center' }}
+                                style={{ display: 'flex', marginTop: '1rem', justifyContent: 'center', border: 'none', width: '100%' }}
                                 onClick={(e) => {
                                     setIsMobileMenuOpen(false);
-                                    setTimeout(() => {
-                                        const element = document.getElementById('contact');
-                                        if (element) {
-                                            element.scrollIntoView({ behavior: 'smooth' });
-                                        }
-                                    }, 100);
+                                    if (onNavigate) onNavigate(true);
                                 }}
                             >
-                                Partner with Us
-                            </a>
+                                Apply for Support
+                            </button>
                         </div>
                     </motion.div>
                 )}

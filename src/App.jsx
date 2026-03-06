@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './index.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -10,8 +10,10 @@ import ManagementTeam from './components/ManagementTeam';
 import ImpactGallery from './components/ImpactGallery';
 import TrustSignals from './components/TrustSignals';
 import Footer from './components/Footer';
+import SupportAgreementForm from './components/SupportAgreementForm';
 
 function App() {
+  const [showPortal, setShowPortal] = useState(false);
   useEffect(() => {
     // Scroll to the top on page load/refresh
     window.scrollTo(0, 0);
@@ -25,15 +27,23 @@ function App() {
 
   return (
     <div className="app-container flex-column">
-      <Navbar />
+      <Navbar onNavigate={(isPortal) => { setShowPortal(isPortal); window.scrollTo(0, 0); }} />
 
       <main>
-        <Hero />
-        <Services />
-        <About />
-        <ManagementTeam />
-        <ImpactGallery />
-        <TrustSignals />
+        {showPortal ? (
+          <div style={{ paddingTop: '100px' }}>
+            <SupportAgreementForm />
+          </div>
+        ) : (
+          <>
+            <Hero onApplyClick={() => { setShowPortal(true); window.scrollTo(0, 0); }} />
+            <Services />
+            <About />
+            <ManagementTeam />
+            <ImpactGallery />
+            <TrustSignals />
+          </>
+        )}
       </main>
 
       <Footer />

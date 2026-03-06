@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Leaf } from 'lucide-react';
+import { ArrowRight, Leaf, ClipboardList } from 'lucide-react';
 
-const Hero = () => {
+const Hero = ({ onApplyClick }) => {
     return (
         <section className="hero" style={{ paddingTop: '120px', paddingBottom: 'var(--space-2xl)', overflow: 'hidden', position: 'relative' }}>
 
@@ -95,11 +95,12 @@ const Hero = () => {
                     className="cta-group flex-row justify-center gap-md"
                     style={{ flexWrap: 'wrap' }}
                 >
-                    <a href="#services" className="btn btn-primary" style={{ padding: '1rem 2rem', fontSize: '1.125rem' }}>
-                        Explore Services
-                    </a>
-                    <a href="#about" className="btn btn-secondary flex-row items-center gap-xs" style={{ padding: '1rem 2rem', fontSize: '1.125rem' }}>
-                        <span>About Us</span>
+                    <button onClick={onApplyClick} className="btn btn-primary flex-row items-center gap-xs" style={{ padding: '1rem 2rem', fontSize: '1.125rem', border: 'none' }}>
+                        <ClipboardList size={20} />
+                        <span>Apply for Support</span>
+                    </button>
+                    <a href="#services" className="btn btn-secondary flex-row items-center gap-xs" style={{ padding: '1rem 2rem', fontSize: '1.125rem' }}>
+                        <span>Explore Services</span>
                         <ArrowRight size={20} />
                     </a>
                 </motion.div>
