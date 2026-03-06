@@ -14,7 +14,7 @@ const Hero = () => {
                     left: '-50px',
                     width: 'calc(100% + 100px)',
                     height: 'calc(100% + 100px)',
-                    backgroundImage: 'url("https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200&auto=format&fit=crop")',
+                    backgroundImage: `url("${import.meta.env.BASE_URL}assets/hero-bg.jpg")`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     opacity: 0.25,
