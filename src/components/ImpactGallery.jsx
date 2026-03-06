@@ -53,6 +53,12 @@ const ImpactGallery = () => {
             type: 'image',
             src: `${import.meta.env.BASE_URL}assets/gallery/WhatsApp Image 2026-03-01 at 9.35.34 AM.jpeg`,
             caption: 'Agricultural Growth',
+        },
+        {
+            id: 9,
+            type: 'image',
+            src: `${import.meta.env.BASE_URL}assets/gallery/WhatsApp Image 2026-03-05 at 7.52.11 AM - Copy.jpeg`,
+            caption: 'Community Support & Partnership',
         }
     ];
 
