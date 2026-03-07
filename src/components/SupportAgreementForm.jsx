@@ -17,6 +17,9 @@ const SupportAgreementForm = () => {
         phoneNumber: '',
         address: 'Asamankese',
         cashSupport: '',
+        farmerGhanaCard: '',
+        guarantorGhanaCard: '',
+        inputDuration: '',
         collateralConsent: false,
     });
 
@@ -31,8 +34,12 @@ const SupportAgreementForm = () => {
     const nextStep = () => {
         // Validation per step
         if (step === 1) {
-            if (!formData.farmerName || !formData.phoneNumber || !formData.address || !formData.cashSupport) {
+            if (!formData.farmerName || !formData.phoneNumber || !formData.address || !formData.cashSupport || !formData.farmerGhanaCard || !formData.guarantorGhanaCard || !formData.inputDuration) {
                 setError('Please fill out all required fields.');
+                return;
+            }
+            if (formData.inputDuration < 6 || formData.inputDuration > 10) {
+                setError('Input duration must be between 6 and 10 months.');
                 return;
             }
         }
@@ -74,6 +81,9 @@ const SupportAgreementForm = () => {
             phone_number: formData.phoneNumber,
             address: formData.address,
             cash_support: formData.cashSupport,
+            farmer_ghana_card: formData.farmerGhanaCard,
+            guarantor_ghana_card: formData.guarantorGhanaCard,
+            input_duration: formData.inputDuration,
             signature_image: signatureDataUrl,
             // Include consent confirmation
             collateral_consent: formData.collateralConsent ? 'AGREED' : 'NOT AGREED'
@@ -114,7 +124,7 @@ const SupportAgreementForm = () => {
                     onClick={() => {
                         setIsSuccess(false);
                         setStep(1);
-                        setFormData({ farmerName: '', phoneNumber: '', address: 'Asamankese', cashSupport: '', collateralConsent: false });
+                        setFormData({ farmerName: '', phoneNumber: '', address: 'Asamankese', cashSupport: '', farmerGhanaCard: '', guarantorGhanaCard: '', inputDuration: '', collateralConsent: false });
                     }}
                     className="btn btn-primary"
                 >
@@ -207,6 +217,33 @@ const SupportAgreementForm = () => {
                                         type="number" id="cashSupport" name="cashSupport"
                                         value={formData.cashSupport} onChange={handleChange}
                                         placeholder="e.g. 1500" min="100" required
+                                    />
+                                </div>
+
+                                <div className="form-group">
+                                    <label htmlFor="farmerGhanaCard">Farmer Ghana Card Number *</label>
+                                    <input
+                                        type="text" id="farmerGhanaCard" name="farmerGhanaCard"
+                                        value={formData.farmerGhanaCard} onChange={handleChange}
+                                        placeholder="e.g. GHA-123456789-0" required
+                                    />
+                                </div>
+
+                                <div className="form-group">
+                                    <label htmlFor="guarantorGhanaCard">Guarantor Ghana Card Number *</label>
+                                    <input
+                                        type="text" id="guarantorGhanaCard" name="guarantorGhanaCard"
+                                        value={formData.guarantorGhanaCard} onChange={handleChange}
+                                        placeholder="e.g. GHA-987654321-0" required
+                                    />
+                                </div>
+
+                                <div className="form-group">
+                                    <label htmlFor="inputDuration">Input Duration (Months) *</label>
+                                    <input
+                                        type="number" id="inputDuration" name="inputDuration"
+                                        value={formData.inputDuration} onChange={handleChange}
+                                        placeholder="Min 6, Max 10" min="6" max="10" required
                                     />
                                 </div>
                             </motion.div>
