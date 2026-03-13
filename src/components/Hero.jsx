@@ -14,7 +14,7 @@ const Hero = ({ onApplyClick }) => {
                     left: '0',
                     width: '100%',
                     height: '100%',
-                    backgroundImage: `url("${import.meta.env.BASE_URL}assets/modern_farmer_hero.png")`,
+                    backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.6), transparent), url("${import.meta.env.BASE_URL}assets/modern_farmer_hero.png")`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     zIndex: -2,
@@ -59,12 +59,12 @@ const Hero = ({ onApplyClick }) => {
                         Modern Farmers
                         {/* Subtle underline SVG */}
                         <svg
-                            style={{ position: 'absolute', bottom: '-10px', left: 0, width: '100%', height: '12px' }}
+                            style={{ position: 'absolute', bottom: '-10px', left: 0, width: '100%', height: '14px' }}
                             viewBox="0 0 200 9"
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                         >
-                            <path d="M2.00037 6.45391C36.8778 3.52044 148.887 -1.69343 198.001 7.4539" stroke="var(--color-accent)" strokeWidth="3" strokeLinecap="round" />
+                            <path d="M2.00037 6.45391C36.8778 3.52044 148.887 -1.69343 198.001 7.4539" stroke="#2D5A27" strokeWidth="4" strokeLinecap="round" />
                         </svg>
                     </span>
                 </motion.h1>
@@ -81,6 +81,7 @@ const Hero = ({ onApplyClick }) => {
                         margin: '0 auto',
                         marginBottom: 'var(--space-lg)',
                         lineHeight: 1.7,
+                        fontWeight: 500,
                         color: 'var(--color-text-body)',
                         textShadow: '2px 2px 4px rgba(0,0,0,0.3)'
                     }}
@@ -100,10 +101,10 @@ const Hero = ({ onApplyClick }) => {
                         <ClipboardList size={20} />
                         <span>Apply for Support</span>
                     </button>
-                    <a href="#services" className="btn btn-secondary flex-row items-center gap-xs" style={{ padding: '1rem 2rem', fontSize: '1.125rem', backgroundColor: 'transparent', border: '2px solid var(--color-primary)', color: 'var(--color-primary)' }}>
+                    <motion.a whileHover={{ scale: 1.05 }} href="#services" className="btn btn-secondary flex-row items-center gap-xs" style={{ padding: '1rem 2rem', fontSize: '1.125rem', backgroundColor: 'transparent', border: '2px solid #2D5A27', color: '#2D5A27' }}>
                         <span>Explore Services</span>
                         <ArrowRight size={20} />
-                    </a>
+                    </motion.a>
                 </motion.div>
 
                 {/* Hero Visual Details (Stats inside hero for immediate trust) */}

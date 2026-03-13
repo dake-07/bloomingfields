@@ -40,7 +40,7 @@ const Navbar = ({ onNavigate, showPortal }) => {
         >
             <div className="container flex-row items-center justify-between">
                 {/* Logo */}
-                <a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate(false); }} className="logo flex-row items-center" style={{ gap: '0.5rem', fontWeight: 600, fontSize: '1.25rem', color: 'var(--color-primary)' }}>
+                <a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate(false); }} className="logo flex-row items-center" style={{ gap: '0.5rem', fontWeight: 600, fontSize: '1.25rem', color: '#2D5A27' }}>
                     <Sprout size={32} />
                     <span>Blooming Fields Agriservices</span>
                 </a>
@@ -58,7 +58,7 @@ const Navbar = ({ onNavigate, showPortal }) => {
                         </button>
                     ) : (
                         <>
-                            <div className="nav-links flex-row gap-md">
+                            <div className="nav-links flex-row" style={{ gap: '2rem' }}>
                                 {navLinks.map((link) => (
                                     <a
                                         key={link.name}
@@ -73,14 +73,14 @@ const Navbar = ({ onNavigate, showPortal }) => {
                                                 }, 100);
                                             }
                                         }}
-                                        className="nav-link text-primary"
-                                        style={{ fontWeight: 500, fontSize: '1rem', transition: 'color 0.2s' }}
+                                        className="nav-link"
+                                        style={{ fontWeight: 500, fontSize: '1rem', transition: 'color 0.2s', color: '#2D5A27' }}
                                     >
                                         {link.name}
                                     </a>
                                 ))}
                             </div>
-                            <button onClick={() => onNavigate && onNavigate(true)} className="btn btn-primary" style={{ border: 'none' }}>
+                            <button onClick={(e) => onNavigate && onNavigate(true)} className="btn btn-primary" style={{ border: 'none', padding: '0.75rem 2rem' }}>
                                 Apply for Support
                             </button>
                         </>
