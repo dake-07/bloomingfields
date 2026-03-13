@@ -10,19 +10,17 @@ const Hero = ({ onApplyClick }) => {
             <div
                 style={{
                     position: 'absolute',
-                    top: '-50px',
-                    left: '-50px',
-                    width: 'calc(100% + 100px)',
-                    height: 'calc(100% + 100px)',
-                    backgroundImage: `url("${import.meta.env.BASE_URL}assets/hero-bg.jpg")`,
+                    top: '0',
+                    left: '0',
+                    width: '100%',
+                    height: '100%',
+                    backgroundImage: `url("${import.meta.env.BASE_URL}assets/modern_farmer_hero.png")`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    opacity: 0.25,
-                    filter: 'blur(10px) saturate(1.2)',
                     zIndex: -2,
                     pointerEvents: 'none',
-                    maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)',
-                    WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%)'
+                    maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%)',
+                    WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%)'
                 }}
             />
 
@@ -56,8 +54,9 @@ const Hero = ({ onApplyClick }) => {
                     transition={{ duration: 0.6, delay: 0.1 }}
                     style={{ maxWidth: '900px', margin: '0 auto', marginBottom: 'var(--space-md)' }}
                 >
-                    Reliable Inputs, Flexible Credit & <span style={{ color: 'var(--color-primary)', position: 'relative' }}>
-                        Market Access
+                    <span style={{ display: 'block', fontSize: '1.25rem', color: 'var(--color-primary)', fontWeight: 600, marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Rooted in Excellence</span>
+                    The All-in-One Growth Partner for <span style={{ color: 'var(--color-primary)', position: 'relative' }}>
+                        Modern Farmers
                         {/* Subtle underline SVG */}
                         <svg
                             style={{ position: 'absolute', bottom: '-10px', left: 0, width: '100%', height: '12px' }}
@@ -77,14 +76,15 @@ const Hero = ({ onApplyClick }) => {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     className="text-muted"
                     style={{
-                        fontSize: '1.125rem',
-                        maxWidth: '650px',
+                        fontSize: '1.25rem',
+                        maxWidth: '700px',
                         margin: '0 auto',
                         marginBottom: 'var(--space-lg)',
-                        lineHeight: 1.7
+                        lineHeight: 1.7,
+                        color: 'var(--color-text-body)'
                     }}
                 >
-                    We provide everything modern farmers need to succeed. Access high-quality seeds & fertilizers, tailored agricultural financing, operational support, and direct buyers for your harvest.
+                    We empower your farm with high-quality inputs, tailored financing, and direct access to global markets—all in one place.
                 </motion.p>
 
                 {/* CTAs */}
