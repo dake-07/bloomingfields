@@ -46,7 +46,7 @@ const Hero = ({ onApplyClick }) => {
                     }}
                 >
                     <Leaf size={16} className="text-primary" />
-                    <span>Empowering Modern Agriculture</span>
+                    <span>Your Complete Agriservices Partner</span>
                 </motion.div>
 
                 {/* Headline */}
@@ -56,8 +56,8 @@ const Hero = ({ onApplyClick }) => {
                     transition={{ duration: 0.6, delay: 0.1 }}
                     style={{ maxWidth: '900px', margin: '0 auto', marginBottom: 'var(--space-md)' }}
                 >
-                    Cultivating Growth with <span style={{ color: 'var(--color-primary)', position: 'relative' }}>
-                        Smart Solutions
+                    Reliable Inputs, Flexible Credit & <span style={{ color: 'var(--color-primary)', position: 'relative' }}>
+                        Market Access
                         {/* Subtle underline SVG */}
                         <svg
                             style={{ position: 'absolute', bottom: '-10px', left: 0, width: '100%', height: '12px' }}
@@ -78,13 +78,13 @@ const Hero = ({ onApplyClick }) => {
                     className="text-muted"
                     style={{
                         fontSize: '1.125rem',
-                        maxWidth: '600px',
+                        maxWidth: '650px',
                         margin: '0 auto',
                         marginBottom: 'var(--space-lg)',
                         lineHeight: 1.7
                     }}
                 >
-                    Your trusted partner in farming. From high-quality inputs and flexible credit to seamless market access, we build resilient agricultural ecosystems.
+                    We provide everything modern farmers need to succeed. Access high-quality seeds & fertilizers, tailored agricultural financing, operational support, and direct buyers for your harvest.
                 </motion.p>
 
                 {/* CTAs */}
