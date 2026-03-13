@@ -14,7 +14,7 @@ const Hero = ({ onApplyClick }) => {
                     left: '0',
                     width: '100%',
                     height: '100%',
-                    backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.6), transparent), url("${import.meta.env.BASE_URL}assets/modern_farmer_hero.png")`,
+                    backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.6), transparent), url("${import.meta.env.BASE_URL}assets/modern_farmer_hero_v2.png")`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     zIndex: -2,
