@@ -23,7 +23,7 @@ const Navbar = ({ onNavigate, showPortal }) => {
 
     return (
         <nav
-            className={`navbar ${isScrolled ? 'scrolled' : ''}`}
+            className={`navbar ${isScrolled ? 'scrolled' : 'header-blur'}`}
             style={{
                 position: 'fixed',
                 top: 0,
@@ -31,8 +31,9 @@ const Navbar = ({ onNavigate, showPortal }) => {
                 right: 0,
                 zIndex: 50,
                 transition: 'all 0.3s ease-in-out',
-                backgroundColor: isScrolled ? 'rgba(244, 241, 234, 0.95)' : 'transparent',
-                backdropFilter: isScrolled ? 'blur(10px)' : 'none',
+                backgroundColor: isScrolled ? 'rgba(244, 241, 234, 0.95)' : 'rgba(255, 255, 255, 0.1)',
+                backdropFilter: 'blur(10px)',
+                WebkitBackdropFilter: 'blur(10px)',
                 boxShadow: isScrolled ? 'var(--shadow-sm)' : 'none',
                 padding: isScrolled ? '1rem 0' : '1.5rem 0',
             }}

@@ -52,9 +52,9 @@ const Hero = ({ onApplyClick }) => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.1 }}
-                    style={{ maxWidth: '900px', margin: '0 auto', marginBottom: 'var(--space-md)' }}
+                    style={{ maxWidth: '900px', margin: '0 auto', marginBottom: 'var(--space-md)', textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}
                 >
-                    <span style={{ display: 'block', fontSize: '1.25rem', color: 'var(--color-primary)', fontWeight: 600, marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Rooted in Excellence</span>
+                    <span style={{ display: 'block', fontSize: '1.25rem', color: 'var(--color-primary)', fontWeight: 600, marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Rooted in Excellence</span>
                     The All-in-One Growth Partner for <span style={{ color: 'var(--color-primary)', position: 'relative' }}>
                         Modern Farmers
                         {/* Subtle underline SVG */}
@@ -81,7 +81,8 @@ const Hero = ({ onApplyClick }) => {
                         margin: '0 auto',
                         marginBottom: 'var(--space-lg)',
                         lineHeight: 1.7,
-                        color: 'var(--color-text-body)'
+                        color: 'var(--color-text-body)',
+                        textShadow: '2px 2px 4px rgba(0,0,0,0.3)'
                     }}
                 >
                     We empower your farm with high-quality inputs, tailored financing, and direct access to global markets—all in one place.
@@ -99,7 +100,7 @@ const Hero = ({ onApplyClick }) => {
                         <ClipboardList size={20} />
                         <span>Apply for Support</span>
                     </button>
-                    <a href="#services" className="btn btn-secondary flex-row items-center gap-xs" style={{ padding: '1rem 2rem', fontSize: '1.125rem' }}>
+                    <a href="#services" className="btn btn-secondary flex-row items-center gap-xs" style={{ padding: '1rem 2rem', fontSize: '1.125rem', backgroundColor: 'transparent', border: '2px solid var(--color-primary)', color: 'var(--color-primary)' }}>
                         <span>Explore Services</span>
                         <ArrowRight size={20} />
                     </a>
