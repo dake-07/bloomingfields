@@ -14,13 +14,13 @@ const Hero = ({ onApplyClick }) => {
                     left: '0',
                     width: '100%',
                     height: '100%',
-                    backgroundImage: `linear-gradient(to top, rgba(0,0,0,0.6), transparent), url("${import.meta.env.BASE_URL}assets/modern_farmer_hero_v2.png")`,
+                    backgroundImage: `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url("${import.meta.env.BASE_URL}assets/modern_farmer_hero_v2.png")`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     zIndex: -2,
                     pointerEvents: 'none',
-                    maskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%)',
-                    WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%)'
+                    maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)',
+                    WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)'
                 }}
             />
 
@@ -52,10 +52,10 @@ const Hero = ({ onApplyClick }) => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.1 }}
-                    style={{ maxWidth: '900px', margin: '0 auto', marginBottom: 'var(--space-md)', textShadow: '2px 2px 4px rgba(0,0,0,0.3)' }}
+                    style={{ color: '#FFFFFF', maxWidth: '900px', margin: '0 auto', marginBottom: 'var(--space-md)', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}
                 >
-                    <span style={{ display: 'block', fontSize: '1.25rem', color: 'var(--color-primary)', fontWeight: 600, marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Rooted in Excellence</span>
-                    The All-in-One Growth Partner for <span style={{ color: 'var(--color-primary)', position: 'relative' }}>
+                    <span style={{ display: 'block', fontSize: '1.25rem', color: '#FFFFFF', fontWeight: 600, marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Rooted in Excellence</span>
+                    The All-in-One Growth Partner for <span style={{ color: '#2D6A2D', textShadow: 'none', position: 'relative' }}>
                         Modern Farmers
                         {/* Subtle underline SVG */}
                         <svg
@@ -74,7 +74,6 @@ const Hero = ({ onApplyClick }) => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="text-muted"
                     style={{
                         fontSize: '1.25rem',
                         maxWidth: '700px',
@@ -82,8 +81,8 @@ const Hero = ({ onApplyClick }) => {
                         marginBottom: 'var(--space-lg)',
                         lineHeight: 1.7,
                         fontWeight: 500,
-                        color: 'var(--color-text-body)',
-                        textShadow: '2px 2px 4px rgba(0,0,0,0.3)'
+                        color: '#FFFFFF',
+                        textShadow: '0 4px 8px rgba(0,0,0,0.8)'
                     }}
                 >
                     We empower your farm with high-quality inputs, tailored financing, and direct access to global markets—all in one place.
@@ -101,7 +100,7 @@ const Hero = ({ onApplyClick }) => {
                         <ClipboardList size={20} />
                         <span>Apply for Support</span>
                     </button>
-                    <motion.a whileHover={{ scale: 1.05 }} href="#services" className="btn btn-secondary flex-row items-center gap-xs" style={{ padding: '1rem 2rem', fontSize: '1.125rem', backgroundColor: 'transparent', border: '2px solid #2D5A27', color: '#2D5A27' }}>
+                    <motion.a whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.1)' }} href="#services" className="btn flex-row items-center gap-xs" style={{ padding: '1rem 2rem', fontSize: '1.125rem', backgroundColor: 'transparent', border: '2px solid #FFFFFF', color: '#FFFFFF' }}>
                         <span>Explore Services</span>
                         <ArrowRight size={20} />
                     </motion.a>

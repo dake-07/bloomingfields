@@ -18,7 +18,7 @@ const Navbar = ({ onNavigate, showPortal }) => {
     const navLinks = [
         { name: 'Services', href: '#services' },
         { name: 'About Us', href: '#about' },
-        { name: 'Impact', href: '#impact' },
+        { name: 'Contact', href: '#contact' },
     ];
 
     return (
