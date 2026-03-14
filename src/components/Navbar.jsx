@@ -31,17 +31,17 @@ const Navbar = ({ onNavigate, showPortal }) => {
                 right: 0,
                 zIndex: 50,
                 transition: 'all 0.3s ease-in-out',
-                backgroundColor: isScrolled ? 'rgba(244, 241, 234, 0.95)' : 'rgba(0, 0, 0, 0.45)',
-                backdropFilter: 'blur(10px)',
-                WebkitBackdropFilter: 'blur(10px)',
+                backgroundColor: isScrolled ? 'rgba(244, 241, 234, 0.95)' : 'transparent',
+                backdropFilter: isScrolled ? 'blur(10px)' : 'none',
+                WebkitBackdropFilter: isScrolled ? 'blur(10px)' : 'none',
                 boxShadow: isScrolled ? 'var(--shadow-sm)' : 'none',
                 padding: isScrolled ? '1rem 0' : '1.5rem 0',
             }}
         >
             <div className="container flex-row items-center justify-between">
                 {/* Logo */}
-                <a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate(false); }} className="logo flex-row items-center" style={{ gap: '0.5rem', fontWeight: 600, fontSize: '1.25rem', color: isScrolled ? '#2D5A27' : '#FFFFFF', transition: 'color 0.3s' }}>
-                    <Sprout size={32} />
+                <a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate(false); }} className="logo flex-row items-center" style={{ gap: '0.5rem', fontWeight: 600, fontSize: '1.25rem', color: isScrolled ? '#2D5A27' : '#FFFFFF', textShadow: isScrolled ? 'none' : '0px 1px 4px rgba(0,0,0,0.8)', transition: 'all 0.3s' }}>
+                    <Sprout size={32} style={{ filter: isScrolled ? 'none' : 'drop-shadow(0px 1px 4px rgba(0,0,0,0.8))' }} />
                     <span>Blooming Fields Agriservices</span>
                 </a>
 
@@ -74,7 +74,7 @@ const Navbar = ({ onNavigate, showPortal }) => {
                                             }
                                         }}
                                         className="nav-link"
-                                        style={{ fontWeight: 500, fontSize: '1rem', transition: 'color 0.2s', color: isScrolled ? '#2D5A27' : '#FFFFFF' }}
+                                        style={{ fontWeight: 500, fontSize: '1rem', transition: 'all 0.2s', color: isScrolled ? '#2D5A27' : '#FFFFFF', textShadow: isScrolled ? 'none' : '0px 1px 4px rgba(0,0,0,0.8)' }}
                                     >
                                         {link.name}
                                     </a>
@@ -92,7 +92,7 @@ const Navbar = ({ onNavigate, showPortal }) => {
                     <button
                         className="mobile-toggle md-hidden"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        style={{ background: 'none', border: 'none', cursor: 'pointer', color: isScrolled ? 'var(--color-primary)' : '#FFFFFF', transition: 'color 0.3s' }}
+                        style={{ background: 'none', border: 'none', cursor: 'pointer', color: isScrolled ? 'var(--color-primary)' : '#FFFFFF', filter: isScrolled ? 'none' : 'drop-shadow(0px 1px 4px rgba(0,0,0,0.8))', transition: 'all 0.3s' }}
                         aria-label="Toggle menu"
                     >
                         {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
