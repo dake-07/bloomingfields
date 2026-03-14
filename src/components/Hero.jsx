@@ -14,7 +14,7 @@ const Hero = ({ onApplyClick }) => {
                     left: '0',
                     width: '100%',
                     height: '100%',
-                    backgroundImage: `linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url("${import.meta.env.BASE_URL}assets/modern_farmer_hero_v2.png")`,
+                    backgroundImage: `linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url("${import.meta.env.BASE_URL}assets/modern_farmer_hero_v2.png")`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     zIndex: -2,
@@ -55,7 +55,7 @@ const Hero = ({ onApplyClick }) => {
                     style={{ color: '#FFFFFF', maxWidth: '900px', margin: '0 auto', marginBottom: 'var(--space-md)', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}
                 >
                     <span style={{ display: 'block', fontSize: '1.25rem', color: '#FFFFFF', fontWeight: 600, marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Rooted in Excellence</span>
-                    The All-in-One Growth Partner for <span style={{ color: '#2D6A2D', textShadow: 'none', position: 'relative' }}>
+                    The All-in-One Growth Partner for <span style={{ color: '#294D18', textShadow: 'none', position: 'relative' }}>
                         Modern Farmers
                         {/* Subtle underline SVG */}
                         <svg
@@ -64,7 +64,7 @@ const Hero = ({ onApplyClick }) => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                         >
-                            <path d="M2.00037 6.45391C36.8778 3.52044 148.887 -1.69343 198.001 7.4539" stroke="#2D5A27" strokeWidth="4" strokeLinecap="round" />
+                            <path d="M2.00037 6.45391C36.8778 3.52044 148.887 -1.69343 198.001 7.4539" stroke="#294D18" strokeWidth="4" strokeLinecap="round" />
                         </svg>
                     </span>
                 </motion.h1>
@@ -100,7 +100,7 @@ const Hero = ({ onApplyClick }) => {
                         <ClipboardList size={20} />
                         <span>Apply for Support</span>
                     </button>
-                    <motion.a whileHover={{ scale: 1.05, backgroundColor: 'rgba(255,255,255,0.1)' }} href="#services" className="btn flex-row items-center gap-xs" style={{ padding: '1rem 2rem', fontSize: '1.125rem', backgroundColor: 'transparent', border: '2px solid #FFFFFF', color: '#FFFFFF' }}>
+                    <motion.a whileHover={{ scale: 1.05 }} href="#services" className="btn flex-row items-center gap-xs" style={{ padding: '1rem 2rem', fontSize: '1.125rem', backgroundColor: 'transparent', border: '1px solid #FFFFFF', color: '#FFFFFF' }}>
                         <span>Explore Services</span>
                         <ArrowRight size={20} />
                     </motion.a>
