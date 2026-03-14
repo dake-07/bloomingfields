@@ -31,7 +31,7 @@ const Navbar = ({ onNavigate, showPortal }) => {
                 right: 0,
                 zIndex: 50,
                 transition: 'all 0.3s ease-in-out',
-                backgroundColor: isScrolled ? 'rgba(244, 241, 234, 0.95)' : 'rgba(255, 255, 255, 0.1)',
+                backgroundColor: isScrolled ? 'rgba(244, 241, 234, 0.95)' : 'rgba(0, 0, 0, 0.45)',
                 backdropFilter: 'blur(10px)',
                 WebkitBackdropFilter: 'blur(10px)',
                 boxShadow: isScrolled ? 'var(--shadow-sm)' : 'none',
@@ -40,7 +40,7 @@ const Navbar = ({ onNavigate, showPortal }) => {
         >
             <div className="container flex-row items-center justify-between">
                 {/* Logo */}
-                <a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate(false); }} className="logo flex-row items-center" style={{ gap: '0.5rem', fontWeight: 600, fontSize: '1.25rem', color: '#2D5A27' }}>
+                <a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate(false); }} className="logo flex-row items-center" style={{ gap: '0.5rem', fontWeight: 600, fontSize: '1.25rem', color: isScrolled ? '#2D5A27' : '#FFFFFF', transition: 'color 0.3s' }}>
                     <Sprout size={32} />
                     <span>Blooming Fields Agriservices</span>
                 </a>
@@ -74,7 +74,7 @@ const Navbar = ({ onNavigate, showPortal }) => {
                                             }
                                         }}
                                         className="nav-link"
-                                        style={{ fontWeight: 500, fontSize: '1rem', transition: 'color 0.2s', color: '#2D5A27' }}
+                                        style={{ fontWeight: 500, fontSize: '1rem', transition: 'color 0.2s', color: isScrolled ? '#2D5A27' : '#FFFFFF' }}
                                     >
                                         {link.name}
                                     </a>
@@ -92,7 +92,7 @@ const Navbar = ({ onNavigate, showPortal }) => {
                     <button
                         className="mobile-toggle md-hidden"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                        style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--color-primary)' }}
+                        style={{ background: 'none', border: 'none', cursor: 'pointer', color: isScrolled ? 'var(--color-primary)' : '#FFFFFF', transition: 'color 0.3s' }}
                         aria-label="Toggle menu"
                     >
                         {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -164,6 +164,7 @@ const Navbar = ({ onNavigate, showPortal }) => {
         }
         .nav-link:hover {
           color: var(--color-accent) !important;
+          opacity: 0.9;
         }
       `}</style>
         </nav>
