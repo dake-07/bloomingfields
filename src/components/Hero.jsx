@@ -18,9 +18,7 @@ const Hero = ({ onApplyClick }) => {
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     zIndex: -2,
-                    pointerEvents: 'none',
-                    maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)',
-                    WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)'
+                    pointerEvents: 'none'
                 }}
             />
 
@@ -33,17 +31,18 @@ const Hero = ({ onApplyClick }) => {
                     transition={{ duration: 0.6 }}
                     className="badge flex-row items-center gap-xs"
                     style={{
-                        backgroundColor: 'rgba(45, 90, 39, 0.08)',
+                        backgroundColor: 'rgba(255, 255, 255, 0.1)',
                         padding: '0.5rem 1rem',
                         borderRadius: 'var(--radius-full)',
-                        color: 'var(--color-primary-dark)',
+                        color: '#FFFFFF',
                         fontWeight: 600,
                         fontSize: '0.875rem',
                         marginBottom: 'var(--space-lg)',
-                        border: '1px solid rgba(45, 90, 39, 0.1)'
+                        border: '1px solid rgba(255, 255, 255, 0.3)',
+                        textShadow: '0 2px 4px rgba(0,0,0,0.5)'
                     }}
                 >
-                    <Leaf size={16} className="text-primary" />
+                    <Leaf size={16} color="#FFFFFF" />
                     <span>Your Complete Agriservices Partner</span>
                 </motion.div>
 
