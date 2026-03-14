@@ -54,7 +54,7 @@ const Hero = ({ onApplyClick }) => {
                     style={{ color: '#FFFFFF', maxWidth: '900px', margin: '0 auto', marginBottom: 'var(--space-md)', textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}
                 >
                     <span style={{ display: 'block', fontSize: '1.25rem', color: '#FFFFFF', fontWeight: 600, marginBottom: '1.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Rooted in Excellence</span>
-                    The All-in-One Growth Partner for <span style={{ color: '#294D18', textShadow: 'none', position: 'relative' }}>
+                    The All-in-One Growth Partner for <span style={{ color: '#5DBB3F', textShadow: 'none', position: 'relative' }}>
                         Modern Farmers
                         {/* Subtle underline SVG */}
                         <svg
@@ -63,7 +63,7 @@ const Hero = ({ onApplyClick }) => {
                             fill="none"
                             xmlns="http://www.w3.org/2000/svg"
                         >
-                            <path d="M2.00037 6.45391C36.8778 3.52044 148.887 -1.69343 198.001 7.4539" stroke="#294D18" strokeWidth="4" strokeLinecap="round" />
+                            <path d="M2.00037 6.45391C36.8778 3.52044 148.887 -1.69343 198.001 7.4539" stroke="#5DBB3F" strokeWidth="4" strokeLinecap="round" />
                         </svg>
                     </span>
                 </motion.h1>
