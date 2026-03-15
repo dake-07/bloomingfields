@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sprout, Mail, Phone, MapPin, Facebook, Twitter, Instagram } from 'lucide-react';
+import { Sprout, Mail, Phone, Facebook, Twitter, Instagram } from 'lucide-react';
 
 const Footer = () => {
     return (
@@ -39,10 +39,7 @@ const Footer = () => {
                     <div className="w-full md:w-1/3 flex-column gap-sm">
                         <h4 style={{ color: 'var(--color-surface)', fontSize: '1.125rem', marginBottom: '1rem' }}>Contact Us</h4>
                         <ul className="flex-column gap-sm" style={{ color: 'rgba(255,255,255,0.7)' }}>
-                            <li className="flex-row items-center gap-sm">
-                                <MapPin size={20} className="text-accent" />
-                                <span>123 Agritech Valley, Suite 100</span>
-                            </li>
+
                             <li className="flex-row items-center gap-sm">
                                 <Phone size={20} className="text-accent" />
                                 <span>+1 (555) 123-4567</span>
