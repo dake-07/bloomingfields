@@ -51,10 +51,7 @@ const ImpactGallery = () => {
                                     className="gallery-img"
                                 />
                             </div>
-                            {/* Always-visible caption */}
-                            <div className="gallery-caption">
-                                <span>{item.caption}</span>
-                            </div>
+
                         </motion.div>
                     ))}
                 </div>
@@ -242,17 +239,6 @@ const ImpactGallery = () => {
                     transform: scale(1.04);
                 }
 
-                /* Always-visible caption */
-                .gallery-caption {
-                    padding: 0.55rem var(--space-sm);
-                    background: var(--color-surface);
-                    border-top: 2px solid var(--color-primary);
-                    font-size: 0.8rem;
-                    font-weight: 600;
-                    color: var(--color-secondary);
-                    letter-spacing: 0.01em;
-                    text-align: center;
-                }
 
                 /* Pulsing video play button */
                 .play-btn-wrap {
