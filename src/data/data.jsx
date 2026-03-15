@@ -122,7 +122,7 @@ export const galleryItems = [
         id: 8,
         type: 'image',
         src: `${import.meta.env.BASE_URL}assets/gallery/WhatsApp Image 2026-03-01 at 9.35.34 AM.jpeg`,
-        caption: 'Agricultural Growth',
+        caption: 'Prepared Farmland — Ready for Planting',
     },
     {
         id: 9,
