@@ -40,8 +40,8 @@ const Navbar = ({ onNavigate, showPortal }) => {
         >
             <div className="container flex-row items-center justify-between">
                 {/* Logo */}
-                <a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate(false); }} className="logo flex-row items-center" style={{ gap: '0.5rem', fontWeight: 600, fontSize: '1.25rem', color: isScrolled ? '#2D5A27' : '#FFFFFF', textShadow: isScrolled ? 'none' : '0px 1px 4px rgba(0,0,0,0.8)', transition: 'all 0.3s' }}>
-                    <Sprout size={32} style={{ filter: isScrolled ? 'none' : 'drop-shadow(0px 1px 4px rgba(0,0,0,0.8))' }} />
+                <a href="#" onClick={(e) => { e.preventDefault(); onNavigate && onNavigate(false); }} className="logo flex-row items-center" style={{ gap: '0.5rem', fontWeight: 600, fontSize: '1.25rem', color: (isScrolled || showPortal) ? '#2D5A27' : '#FFFFFF', textShadow: (isScrolled || showPortal) ? 'none' : '0px 1px 4px rgba(0,0,0,0.8)', transition: 'all 0.3s' }}>
+                    <Sprout size={32} style={{ filter: (isScrolled || showPortal) ? 'none' : 'drop-shadow(0px 1px 4px rgba(0,0,0,0.8))' }} />
                     <span>Blooming Fields Agriservices</span>
                 </a>
 
