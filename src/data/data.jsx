@@ -83,6 +83,12 @@ export const galleryItems = [
         caption: 'Sustainable Practices Explained',
     },
     {
+        id: 10,
+        type: 'image',
+        src: `${import.meta.env.BASE_URL}assets/gallery/WhatsApp Image 2026-03-09 at 8.28.40 PM.jpeg`,
+        caption: 'Field Operations & Support',
+    },
+    {
         id: 3,
         type: 'image',
         src: `${import.meta.env.BASE_URL}assets/gallery/WhatsApp Image 2026-02-28 at 1.49.44 PM.jpeg`,
@@ -123,12 +129,6 @@ export const galleryItems = [
         type: 'image',
         src: `${import.meta.env.BASE_URL}assets/gallery/WhatsApp Image 2026-03-05 at 7.52.11 AM - Copy.jpeg`,
         caption: 'Community Support & Partnership',
-    },
-    {
-        id: 10,
-        type: 'image',
-        src: `${import.meta.env.BASE_URL}assets/gallery/WhatsApp Image 2026-03-09 at 8.28.40 PM.jpeg`,
-        caption: 'Field Operations & Support',
     }
 ];
 
