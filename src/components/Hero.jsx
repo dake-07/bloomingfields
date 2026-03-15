@@ -95,14 +95,14 @@ const Hero = ({ onApplyClick }) => {
                     className="cta-group flex-row justify-center gap-md"
                     style={{ flexWrap: 'wrap' }}
                 >
-                    <button onClick={onApplyClick} className="btn btn-primary flex-row items-center gap-xs" style={{ padding: '1rem 2rem', fontSize: '1.125rem', border: 'none' }}>
+                    <button onClick={onApplyClick} className="btn btn-primary flex-row items-center gap-xs" style={{ padding: '1rem 2rem', fontSize: '1.125rem', border: 'none', minHeight: '52px' }}>
                         <ClipboardList size={20} />
                         <span>Apply for Support</span>
                     </button>
-                    <motion.a whileHover={{ scale: 1.05 }} href="#services" className="btn flex-row items-center gap-xs" style={{ padding: '1rem 2rem', fontSize: '1.125rem', backgroundColor: 'transparent', border: '1px solid #FFFFFF', color: '#FFFFFF' }}>
+                    <a href="#services" className="btn hero-btn-outline flex-row items-center gap-xs" style={{ padding: '1rem 2rem', fontSize: '1.125rem', minHeight: '52px' }}>
                         <span>Explore Services</span>
-                        <ArrowRight size={20} />
-                    </motion.a>
+                        <span className="hero-arrow"><ArrowRight size={20} /></span>
+                    </a>
                 </motion.div>
 
                 {/* Hero Visual Details (Stats inside hero for immediate trust) */}
@@ -141,6 +141,29 @@ const Hero = ({ onApplyClick }) => {
                 </motion.div>
             </div>
 
+            <style>{`
+                .hero-btn-outline {
+                    background-color: rgba(255, 255, 255, 0.12);
+                    border: 1.5px solid rgba(255, 255, 255, 0.7);
+                    color: #FFFFFF;
+                    backdrop-filter: blur(8px);
+                    -webkit-backdrop-filter: blur(8px);
+                    transition: background-color 250ms ease, border-color 250ms ease, transform 250ms ease;
+                }
+                .hero-btn-outline:hover {
+                    background-color: rgba(255, 255, 255, 0.22);
+                    border-color: #FFFFFF;
+                    transform: scale(1.03);
+                }
+                .hero-arrow {
+                    display: inline-flex;
+                    align-items: center;
+                    transition: transform 220ms ease;
+                }
+                .hero-btn-outline:hover .hero-arrow {
+                    transform: translateX(5px);
+                }
+            `}</style>
         </section>
     );
 };
